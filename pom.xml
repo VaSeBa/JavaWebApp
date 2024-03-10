@@ -7,7 +7,7 @@
   <groupId>ru.vaseba</groupId>
   <artifactId>JavaWebApp</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
 
   <name>No name</name>
   <url>https://</url>
@@ -20,8 +20,13 @@
 
   <build>
     <finalName>topjava</finalName>
-    <defaultGoal>install</defaultGoal>
+    <defaultGoal>package</defaultGoal>
     <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0</version>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
