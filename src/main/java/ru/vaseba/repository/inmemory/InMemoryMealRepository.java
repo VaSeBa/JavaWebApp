@@ -1,6 +1,7 @@
-package ru.vaseba.repository;
+package ru.vaseba.repository.inmemory;
 
 import ru.vaseba.model.Meal;
+import ru.vaseba.repository.MealRepository;
 import ru.vaseba.util.MealsUtil;
 
 import java.util.Collection;

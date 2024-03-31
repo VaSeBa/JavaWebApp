@@ -3,7 +3,7 @@ package ru.vaseba.web;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import ru.vaseba.model.Meal;
-import ru.vaseba.repository.InMemoryMealRepository;
+import ru.vaseba.repository.inmemory.InMemoryMealRepository;
 import ru.vaseba.repository.MealRepository;
 import ru.vaseba.util.MealsUtil;
 
