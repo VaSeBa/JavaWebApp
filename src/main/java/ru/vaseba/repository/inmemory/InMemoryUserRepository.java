@@ -2,12 +2,14 @@ package ru.vaseba.repository.inmemory;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 import ru.vaseba.model.User;
 import ru.vaseba.repository.UserRepository;
 
 import java.util.Collections;
 import java.util.List;
 
+@Repository
 public class InMemoryUserRepository implements UserRepository {
     private static final Logger log = LoggerFactory.getLogger(InMemoryUserRepository.class);
 

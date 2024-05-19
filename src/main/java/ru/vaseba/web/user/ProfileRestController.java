@@ -1,10 +1,11 @@
 package ru.vaseba.web.user;
 
-
+import org.springframework.stereotype.Controller;
 import ru.vaseba.model.User;
 
 import static ru.vaseba.web.SecurityUtil.authUserId;
 
+@Controller
 public class ProfileRestController extends AbstractUserController {
 
     public User get() {
