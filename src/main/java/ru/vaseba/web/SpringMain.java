@@ -18,8 +18,8 @@ public class SpringMain {
         UserRepository userRepository = appCtx.getBean(UserRepository.class);
         userRepository.getAll();
 
-//        UserService userService = appCtx.getBean(UserService.class);
-//        userService.create(new User(null, "userName", "userMail", "pass", Role.ADMIN));
+        UserService userService = appCtx.getBean(UserService.class);
+        userService.create(new User(null, "userName", "userMail", "pass", Role.ADMIN));
 
         appCtx.close();
     }
