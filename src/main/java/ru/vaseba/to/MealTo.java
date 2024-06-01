@@ -1,4 +1,4 @@
-package ru.vaseba.model;
+package ru.vaseba.to;
 
 import java.time.LocalDateTime;
 

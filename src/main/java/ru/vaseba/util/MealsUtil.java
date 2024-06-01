@@ -1,7 +1,7 @@
 package ru.vaseba.util;
 
 import ru.vaseba.model.Meal;
-import ru.vaseba.model.MealTo;
+import ru.vaseba.to.MealTo;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
