@@ -1,4 +1,4 @@
-package ru.vaseba.web;
+package ru.vaseba;
 
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
