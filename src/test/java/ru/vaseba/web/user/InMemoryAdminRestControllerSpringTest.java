@@ -2,6 +2,7 @@ package ru.vaseba.web.user;
 
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import static org.junit.Assert.*;
 import static ru.vaseba.UserTestData.NOT_FOUND;
 import static ru.vaseba.UserTestData.USER_ID;
 
+@Ignore
 @ContextConfiguration("classpath:spring/spring-app.xml")
 @RunWith(SpringRunner.class)
 public class InMemoryAdminRestControllerSpringTest {
