@@ -1,14 +1,19 @@
 package ru.vaseba.service;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
 import org.springframework.dao.DataAccessException;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import org.slf4j.bridge.SLF4JBridgeHandler;
 import org.springframework.test.context.junit4.SpringRunner;
+import ru.vaseba.ActiveDbProfileResolver;
+import ru.vaseba.Profiles;
 import ru.vaseba.UserTestData;
 import ru.vaseba.model.Role;
 import ru.vaseba.model.User;
@@ -25,10 +30,19 @@ import static ru.vaseba.UserTestData.*;
 })
 @RunWith(SpringRunner.class)
 @Sql(scripts = "classpath:db/populateDB.sql", config = @SqlConfig(encoding = "UTF-8"))
+@ActiveProfiles(resolver = ActiveDbProfileResolver.class)
 public class UserServiceTest {
 
     @Autowired
     private UserService service;
+
+    @Autowired
+    private CacheManager cacheManager;
+
+    @Before
+    public void setup() {
+        cacheManager.getCache("users").clear();
+    }
 
     @Test
     public void create() {
