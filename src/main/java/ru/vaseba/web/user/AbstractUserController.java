@@ -11,7 +11,6 @@ import java.util.List;
 import static ru.vaseba.util.ValidationUtil.assureIdConsistent;
 import static ru.vaseba.util.ValidationUtil.checkNew;
 
-
 public abstract class AbstractUserController {
     protected final Logger log = LoggerFactory.getLogger(getClass());
 
