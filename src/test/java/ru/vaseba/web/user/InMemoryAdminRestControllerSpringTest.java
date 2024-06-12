@@ -15,8 +15,7 @@ import static org.junit.Assert.*;
 import static ru.vaseba.UserTestData.NOT_FOUND;
 import static ru.vaseba.UserTestData.USER_ID;
 
-@Ignore
-@ContextConfiguration("classpath:spring/spring-app.xml")
+@ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/inmemory.xml"})
 @RunWith(SpringRunner.class)
 public class InMemoryAdminRestControllerSpringTest {
 
