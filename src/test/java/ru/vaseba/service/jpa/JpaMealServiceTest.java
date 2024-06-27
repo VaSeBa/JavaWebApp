@@ -1,9 +1,9 @@
 package ru.vaseba.service.jpa;
 
 import org.springframework.test.context.ActiveProfiles;
-import ru.javawebinar.topjava.service.AbstractMealServiceTest;
+import ru.vaseba.service.AbstractMealServiceTest;
 
-import static ru.javawebinar.topjava.Profiles.JPA;
+import static ru.vaseba.Profiles.JPA;
 
 @ActiveProfiles(JPA)
 public class JpaMealServiceTest extends AbstractMealServiceTest {
