@@ -4,7 +4,24 @@
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-  <display-name>TopJava</display-name>
+  <display-name>JavaWebApp</display-name>
+
+  <context-param>
+    <param-name>spring.profiles.default</param-name>
+    <param-value>postgres,datajpa</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>
+      classpath:spring/spring-app.xml
+      classpath:spring/spring-db.xml
+    </param-value>
+  </context-param>
+
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
 
   <servlet>
     <servlet-name>userServlet</servlet-name>
