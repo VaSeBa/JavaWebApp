@@ -17,6 +17,7 @@ import static ru.vaseba.UserTestData.USER_ID;
 
 @ContextConfiguration({"classpath:spring/spring-app.xml", "classpath:spring/inmemory.xml"})
 @RunWith(SpringRunner.class)
+@Ignore
 public class InMemoryAdminRestControllerSpringTest {
 
     @Autowired

@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ru.vaseba</groupId>
-  <artifactId>JavaWebApp</artifactId>
+  <artifactId>javawebapp</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>No name</name>
+  <name>Calories Management</name>
   <url>https://</url>
 
   <properties>
@@ -63,6 +63,48 @@
         <version>3.2.5</version>
         <configuration>
           <argLine>-Dfile.encoding=UTF-8</argLine>
+        </configuration>
+      </plugin>
+
+      <!-- http://stackoverflow.com/questions/4305935/is-it-possible-to-supply-tomcat6s-context-xml-file-via-the-maven-cargo-plugin#4417945 -->
+      <!-- https://codehaus-cargo.github.io/cargo/Tomcat+9.x.html -->
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven3-plugin</artifactId>
+        <version>1.10.12</version>
+        <configuration>
+          <container>
+            <containerId>tomcat9x</containerId>
+            <systemProperties>
+              <file.encoding>UTF-8</file.encoding>
+              <spring.profiles.active>tomcat,datajpa</spring.profiles.active>
+            </systemProperties>
+            <dependencies>
+              <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+              </dependency>
+            </dependencies>
+          </container>
+          <configuration>
+            <configfiles>
+              <configfile>
+                <file>/home/vaseba/IdeaProjects/JavaWebApp/src/main/resources/tomcat/context.xml</file>
+                <todir>conf/Catalina/localhost/</todir>
+                <tofile>${project.build.finalName}.xml</tofile>
+              </configfile>
+            </configfiles>
+          </configuration>
+          <deployables>
+            <deployable>
+              <groupId>ru.vaseba</groupId>
+              <artifactId>javawebapp</artifactId>
+              <type>war</type>
+              <properties>
+                <context>${project.build.finalName}</context>
+              </properties>
+            </deployable>
+          </deployables>
         </configuration>
       </plugin>
     </plugins>
@@ -167,7 +209,7 @@
 
     <dependency>
       <groupId>org.springframework</groupId>
-      <artifactId>spring-web</artifactId>
+      <artifactId>spring-webmvc</artifactId>
     </dependency>
 
     <!--Test-->
