@@ -8,8 +8,4 @@ import static ru.vaseba.Profiles.JDBC;
 
 @ActiveProfiles(JDBC)
 public class JdbcMealServiceTest extends AbstractMealServiceTest {
-    @Override
-    @Ignore
-    public void createWithException() throws Exception {
-    }
 }
